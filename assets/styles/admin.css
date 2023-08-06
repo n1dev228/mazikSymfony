@@ -1,0 +1,25 @@
+.admin-aside {
+    width: 200px;
+    background: #575757;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.admin-main {
+    margin-top: 20px;
+    margin-left: 220px;
+    padding: 16px;
+    background: #fff;
+    width: calc(100% - 240px);
+}
+.admin-page-heading {
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+.admin-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

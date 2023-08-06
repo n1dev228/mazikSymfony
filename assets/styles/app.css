@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@200;400&family=Montserrat:wght@700;900&display=swap');
+:root {
+    --main: #ff4c4c;
+    --ok: #89ba3e;
+    --head-font-color: #000;
+    --font-color: #575757;
+    --alt: #f7f7f7;
+    --gray: #e1e1e1;
+    --border-radius: 4px;
+    --main-font: 'Geologica', sans-serif;
+    --head-font: 'Montserrat', sans-serif;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--main-font);
+}
+a {
+    text-decoration: none;
+}
+
+body {
+    background: var(--alt);
+}
+.mz-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    background: var(--gray);
+    width: 240px;
+}
+.mz-main {
+    width: 100%;
+    max-width: calc(100% - 264px);
+    margin-left: 260px;
+}
+.mz-sidebar-section {
+    padding: 16px;
+}
+.mz-sidebar-section:first-child {
+    margin: 16px 0 0 0;
+}
+.mz-menu ul {
+    list-style: none;
+}
+.mz-menu a {
+    padding: 8px 0;
+    display: block;
+    color: var(--font-color);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    transition: .1s color;
+    font-family: var(--head-font);
+}
+.mz-menu a:hover {
+    color: var(--main);
+}
+.mz-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    justify-content: center;
+
+
+}
+.mz-logo span {
+    color: var(--head-font-color);
+    font-family: var(--head-font);
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 22px;
+}
+.mz-header {
+    background: #fff;
+
+
+}
+.mz-main-header {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    justify-content: space-between;
+}
+.mz-header-search-form {
+    flex-basis: 320px;
+    flex-grow: 1;
+
+}
+.mz-header-contacts {
+    display: flex;
+    flex-basis: 320px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.mz-header-contacts a {
+    flex-basis: calc(100%/2 - 8px);
+    color: var(--head-font-color);
+    font-weight: 700;
+    font-size: 14px;
+
+    font-family: var(--head-font);
+    white-space: nowrap;
+
+}
+.mz-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+}
+.mz-input {
+    outline: none !important;
+    padding: 8px;
+    width: 100%;
+    border: 1px solid var(--gray);
+    border-radius: var(--border-radius);
+
+}
+.mz-input::placeholder {
+    color: var(--gray);
+}
+.mz-mail {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.mz-section {
+    background: #fff;
+    padding: 16px;
+    margin: 16px 0;
+    border-radius: var(--border-radius);
+}
+.mz-register-block {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.mz-register-block a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.mz-product-looped-head {
+    background: var(--gray);
+    padding: 16px 0;
+}
+.mz-product-looped {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-bottom: 1px solid var(--alt);
+}
+.mz-product-looped * {
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--font-color);
+}
+.mz-product-looped-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-basis: 440px;
+    flex-grow: 1;
+}
+.mz-product-looped-image {
+    object-fit: contain;
+}
+.mz-product-looped-article {
+    flex-basis: 240px;
+    flex-grow: 1;
+    text-align: center;
+}
+.mz-product-looped-manufactory {
+    flex-basis: 180px;
+    text-align: center;
+    flex-grow: 1;
+}
+.mz-product-looped-remaining {
+    flex-basis: 80px;
+    text-align: center;
+}
+.mz-product-looped-time {
+    flex-basis: 80px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.mz-product-looped-time svg {
+    color: var(--ok);
+}
+.mz-product-looped-price {
+    flex-basis: 110px;
+    text-align: center;
+}
+.mz-product-looped-order {
+    display: flex;
+    flex-basis: 100px;
+    align-items: center;
+    gap: 8px;
+}
+.mz-btn {
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+.mz-btn-add-to-cart {
+    background: var(--main);
+    height: 42px;
+
+}
+.mz-btn-add-to-cart svg {
+    width: 18px;
+    height: 18px;
+    color: #fff !important;
+
+    font-size: 16px;
+}

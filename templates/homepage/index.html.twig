@@ -1,0 +1,98 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Мазик бай официальный дилер ОАО МАЗ{% endblock %}
+
+{% block body %}
+    <section class="mz-section mz-banner-section">
+
+    </section>
+    <section class="mz-section mz-products">
+        <div class="mz-product mz-product-looped mz-product-looped-head">
+            <div  class="mz-product-looped-title-wrap">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="24" fill="currentColor" class="bi bi-camera" viewBox="0 0 16 16">
+                    <path d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1v6zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2z"/>
+                    <path d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+                </svg>
+                <span class="mz-product-looped-title">
+                   Наименование товара
+                </span>
+            </div>
+            <div class="mz-product-looped-article">
+                Каталожный номер
+            </div>
+            <div class="mz-product-looped-manufactory">
+               Производитель
+            </div>
+            <div class="mz-product-looped-remaining">
+                Ост.
+            </div>
+            <div class="mz-product-looped-remaining">
+                Минск
+            </div>
+            <div class="mz-product-looped-remaining">
+                Гомель
+            </div>
+            <div class="mz-product-looped-remaining">
+                Гродно
+            </div>
+            <div class="mz-product-looped-remaining">
+                Витебск
+            </div>
+            <div class="mz-product-looped-time">
+                Отгрузка
+            </div>
+            <div class="mz-product-looped-price">
+                Цена
+            </div>
+            <div class="mz-product-looped-order">
+                Заказ
+            </div>
+        </div>
+        <div class="mz-product mz-product-looped">
+            <a href="" class="mz-product-looped-title-wrap">
+                <img src="{{ asset('images/103-1001015.jpg') }}"
+                     class = "mz-product-looped-image"  width="64" height="64" alt="">
+                <span class="mz-product-looped-title">
+                    Амортизатор (подушка) двигателя АМАЗ (дв. ММЗ), МАЗ ОАО
+                </span>
+            </a>
+            <div class="mz-product-looped-article">
+                103-1001015
+            </div>
+            <div class="mz-product-looped-manufactory">
+                МАЗ ОАО
+            </div>
+            <div class="mz-product-looped-remaining">
+                4
+            </div>
+            <div class="mz-product-looped-remaining">
+                1
+            </div>
+            <div class="mz-product-looped-remaining">
+                1
+            </div>
+            <div class="mz-product-looped-remaining">
+                1
+            </div>
+            <div class="mz-product-looped-remaining">
+                1
+            </div>
+            <div class="mz-product-looped-time">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock-fill" viewBox="0 0 16 16">
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                </svg>
+                {{ "now"|date('d.m') }}
+            </div>
+            <div class="mz-product-looped-price">
+                 Уточняйте у менеджера
+            </div>
+            <div class="mz-product-looped-order">
+                <input type="number" min="1" value="1" class="mz-input">
+                <button class="mz-btn mz-btn-add-to-cart"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                        <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+                    </svg></button>
+            </div>
+        </div>
+
+    </section>
+{% endblock %}

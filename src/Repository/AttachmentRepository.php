@@ -39,8 +39,8 @@ class AttachmentRepository extends ServiceEntityRepository
 //    public function findOneBySomeField($value): ?Attachment
 //    {
 //        return $this->createQueryBuilder('a')
-//            ->andWhere('a.exampleField = :val')
-//            ->setParameter('val', $value)
+//            ->andWhere('a.post_id = :id')
+//            ->setParameter('id', $value)
 //            ->getQuery()
 //            ->getOneOrNullResult()
 //        ;

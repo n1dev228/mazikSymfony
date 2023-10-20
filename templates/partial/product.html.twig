@@ -1,0 +1,44 @@
+<div class="mz-product mz-product-looped">
+    <a href="{{ path('app_product_single',
+        {'cat_slug': 'dvigatel',
+            'slug': product.slug }
+    ) }}" class="mz-product-looped-image-wrap">
+        <img src="{{ product.attachment is defined ? '/' ~ product.attachment.filePath ~ '/' ~ product.attachment.fileName : '/uploads/nophoto.jpg'  }}"
+             class="mz-product-looped-image" width="64" height="64" alt="">
+    </a>
+    <div class="mz-product-looped-price">
+        {{ product.price }}
+    </div>
+    <div class="mz-product-looped-title">
+        {{ product.name }}
+    </div>
+    <div class="mz-product-looped-article">
+        Кат.номер: <b>{{ product.article }}</b>
+    </div>
+
+    <div class="mz-product-looped-manufactory">
+        Производитель: <a href="">МАЗ ОАО</a>
+    </div>
+
+    <div class="mz-product-looped-time-wrap">
+        Отгрузим:
+        <div class="mz-product-looped-time">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                 class="bi bi-clock-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+            </svg>
+            {{ "now"|date('d.m') }}
+        </div>
+    </div>
+
+    <div class="mz-product-looped-order">
+
+        <button class="mz-btn mz-btn-add-to-cart">
+            Заказать
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                 class="bi bi-cart2" viewBox="0 0 16 16">
+                <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+            </svg>
+        </button>
+    </div>
+</div>

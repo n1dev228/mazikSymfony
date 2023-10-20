@@ -1,20 +1,36 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ProductCategoryController!{% endblock %}
+{% block title %}  {{ category.name }} | Мазик Бай {% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <section class="mz-section mz-products">
+        <div class="container">
+            <div class="mz-breads">
+                <a href="{{ path('app_homepage') }}">Mazik.by</a>
+                <span class="sep">/</span>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+                <span class="current">{{ category.name }}</span>
+            </div>
+            <div class="mz-section-title">
+                {{ category.name }}
+            </div>
+            {# Pagination block #}
+            {% include 'partial/pagination.html.twig' with {'pages' : pages } %}
+            <div class="mz-row mz-products-row">
+                {% for product in products %}
+                    {% include 'partial/product.html.twig' with {'product' : product} %}
+                {% endfor %}
+            </div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Users/yaraslauakhrymenka/Desktop/homework/mazikBySymfony/src/Controller/ProductCategoryController.php'|file_link(0) }}">src/Controller/ProductCategoryController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Users/yaraslauakhrymenka/Desktop/homework/mazikBySymfony/templates/product_category/index.html.twig'|file_link(0) }}">templates/product_category/index.html.twig</a></code></li>
-    </ul>
-</div>
+            {# Pagination block #}
+            {% include 'partial/pagination.html.twig' with {'pages' : pages } %}
+        </div>
+    </section>
+    {% if page is not defined %}
+    <section class="mz-section mz-content">
+        <div class="container">
+            {{ category.content|raw }}
+        </div>
+    </section>
+    {% endif %}
 {% endblock %}

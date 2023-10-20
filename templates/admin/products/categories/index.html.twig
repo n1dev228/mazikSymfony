@@ -1,0 +1,59 @@
+{% extends 'admin/base-admin.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+    <h1 class="admin-page-heading">Создать категорию</h1>
+    <form action="{{ path('app_api_category_create') }}" method="post"
+          enctype="multipart/form-data"
+          class="admin-form">
+        <div class="admin-form-body admin-form-body-category">
+            <div class="mz-input-group">
+                <label for="">Название категории</label>
+                <input type="text" class = "mz-input" name="name" placeholder="Название категории">
+            </div>
+            <div class="mz-input-group">
+                <label for="">Ссылка</label>
+                <input type="text"  class = "mz-input" name="slug" placeholder="Ссылка">
+            </div>
+            <div class="mz-input-group">
+                <label for="">Родительская категория</label>
+                <select name="parent" id="" class="mz-input">
+                    <option value="0">Нет родителя</option>
+                </select>
+            </div>
+
+            <div class="mz-input-group">
+                <label for="">Контент</label>
+
+                <textarea id = "adminContentTextarea" name="content">
+
+            </textarea>
+            </div>
+            <button class="admin-button">Создать Категорию</button>
+        </div>
+        <div class="admin-categories-list">
+             <strong>Список категорий</strong>
+            {% for cat in categories %}
+                <div class="admin-cat">
+                    <div class="admin-cat-name">
+                        {{ cat.name }}
+                    </div>
+                    <div class="admin-cat-slug">
+                        {{ cat.slug }}
+                    </div>
+                    <div class="admin-cat-content">
+                        {{ cat.content }}
+                    </div>
+                    <div class="admin-cat-created">
+                        {{ cat.createdAt|date('Y-m-d H:i:s') }}
+                    </div>
+                    <a href="{{ cat.id }}">Редактировать</a>
+                </div>
+            {% endfor %}
+        </div>
+
+
+    </form>
+
+{% endblock %}

@@ -1,20 +1,92 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ProductSingleController!{% endblock %}
+{% block title %}{{ product.getArticle }} {{ product.getName }} | Мазик Бай{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <section class="mz-section mz-single-page">
+        <div class="container">
+            <div class="mz-breads">
+                <a href="{{ path('app_homepage') }}">Mazik.by</a>
+                <span class="sep">/</span>
+                <a href="{{ path('app_homepage') }}product-category/{{ productCat.slug }}">{{ productCat.name }}</a>
+                <span class="sep">/</span>
+                <span class="current">{{ product.getName }}</span>
+            </div>
+            <div class="mz-row mz-single__product-row">
+                <h1 class="mz-section-title mz-single-product__title">
+                    {{ product.getArticle }} {{ product.getName }}
+                </h1>
+                <div class="mz-product-image">
+                    {% if product.getAttachments is defined %}
+                        <div class="mz-single-product__thumbs">
+                            {% for attachment in product.getAttachments %}
+                                {% set productAttachment =  '/' ~ attachment.filePath ~ '/' ~ attachment.fileName %}
+                                <a href="">
+                                    <img src="{{ productAttachment }}" width="120" height="120" alt="">
+                                </a>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    {% if product.mainAttachment is defined %}
+                        {% set productMainImage =  '/' ~ product.mainAttachment.filePath ~ '/' ~ product.mainAttachment.fileName %}
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+                        <a href="{{ productMainImage }}" class="mz-single-product__main-image">
+                            <img src="{{ productMainImage }}" alt="">
+                        </a>
+                    {% else %}
+                        <a href="" class="mz-single-product__main-image">
+                            <img src="{{ asset('/uploads/nophoto.jpg') }}" alt="">
+                        </a>
+                    {% endif %}
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Users/yaraslauakhrymenka/Desktop/homework/mazikBySymfony/src/Controller/ProductSingleController.php'|file_link(0) }}">src/Controller/ProductSingleController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Users/yaraslauakhrymenka/Desktop/homework/mazikBySymfony/templates/product_single/index.html.twig'|file_link(0) }}">templates/product_single/index.html.twig</a></code></li>
-    </ul>
-</div>
+                </div>
+                <div class="mz-product-summary">
+                    <p class="mz-price">{{ product.getPrice }} BYN</p>
+                    <p class="mz-cat-number">Каталожный номер: <b>{{ product.getArticle }}</b></p>
+                    <p class="mz-stock-status {{ product.stockStatus }}">
+                        {{ product.stockStatus == 'instock' ? 'В наличии' : 'Нет в наличии' }}
+                        <b>{{ product.stockStatus == 'instock'  ? product_stock : '' }}</b>
+                    </p>
+                    {% if product.remaining is not empty %}
+                        <div class="mz-remaining-list">
+
+                            <p class="mz-title">Детализация по складам</p>
+                            <div class="mz-remaining-item head">
+                                <span>Склад</span> <b>Остаток</b>
+                            </div>
+                            {% for wareHouse in product.remaining %}
+                                <div class="mz-remaining-item">
+                                    <span>{{ wareHouse['Склад'] }}:</span>
+                                    <b>{{ wareHouse['Остаток'] }}</b>
+                                </div>
+                            {% endfor %}
+
+                        </div>
+                    {% endif %}
+                    <div class="mz-product-cta">
+                        <div class="mz-qt-select mz-row">
+                            <span>Кол-во: </span>
+                            <div class="mz-qt-select-controls mz-row">
+                                <button class="mz-btn mz-btn-minus">-</button>
+                                <div class="mz-qt-value">1</div>
+                                <button class="mz-btn mz-btn-plus">+</button>
+                            </div>
+                        </div>
+                        <button class="mz-btn mz-btn-add-to-cart">В Корзину <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                                <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
+                            </svg></button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mz-content mz-single-product__content">
+                <div class="mz-section-title">Описание</div>
+                <div class="mz-section white">
+                    {{ product.getContent|raw }}
+                </div>
+            </div>
+
+        </div>
+    </section>
 {% endblock %}

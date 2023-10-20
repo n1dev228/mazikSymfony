@@ -1,0 +1,12 @@
+<div class="mz-pagination">
+    {% if pages is defined %}
+        {% for page in pages %}
+           {% if page != 1 %}
+             {% set pageUrl = path('app_product_category', {'slug': category.slug, 'page': 'page', 'number': page}) %}
+           {% else%}
+             {% set pageUrl = path('app_product_category', {'slug': category.slug }) %}
+            {% endif %}
+            <a href="{{ pageUrl }}"> {{ page }} </a>
+        {% endfor %}
+    {% endif %}
+</div>

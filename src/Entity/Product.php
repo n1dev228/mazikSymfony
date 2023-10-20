@@ -41,6 +41,9 @@ class Product
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $content = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $stock_status = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -150,6 +153,18 @@ class Product
     public function setContent(?string $content): static
     {
         $this->content = $content;
+
+        return $this;
+    }
+
+    public function getStockStatus(): ?string
+    {
+        return $this->stock_status;
+    }
+
+    public function setStockStatus(string $stock_status): static
+    {
+        $this->stock_status = $stock_status;
 
         return $this;
     }

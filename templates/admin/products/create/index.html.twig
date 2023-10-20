@@ -4,7 +4,10 @@
 
 {% block body %}
     <h1 class="admin-page-heading">Создать новый товар</h1>
-    <form action="" class="admin-form">
+    <form action="{{ path('app_api_product') }}" method="post"
+          enctype="multipart/form-data"
+          class="admin-form">
+        <div class="admin-form-body">
         <div class="mz-input-group">
             <label for="">Название товара</label>
             <input type="text" class = "mz-input" name="name" placeholder="Название товара">
@@ -25,10 +28,30 @@
             <label for="">Цена</label>
             <input type="text"  class = "mz-input" name="price" placeholder="Цена">
         </div>
-        <div class="mz-input-group">
-            <label for="">Контент</label>
-            <textarea name="content"  class = "mz-input" id="" cols="30" rows="10" placeholder="Контент"></textarea>
+
         </div>
+        <aside class="admin-body-sidebar">
+            <button class="admin-button">Создать товар</button>
+            <section class="admin-sidebar-section">
+                <div class="mz-input-group admin-image-main">
+                    <label for="">Изображение товара</label>
+                    <input type="file" name="mainImage" class="mz-input">
+                </div>
+                <div class="mz-input-group">
+                    <label for="">Категория товара</label>
+                    {% for cat in categories %}
+                        <label for="">
+                            <input type="checkbox" value="{{ cat.id }}" name="category[]">
+                            {{  cat.name  }}
+                        </label>
+
+
+                    {% endfor %}
+                </div>
+
+            </section>
+        </aside>
+
     </form>
 
 {% endblock %}

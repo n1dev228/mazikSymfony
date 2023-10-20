@@ -32,6 +32,12 @@ class Category
     #[ORM\Column(length: 255)]
     private ?string $taxonomy = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?int $parent = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $cat_unique = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -105,6 +111,30 @@ class Category
     public function setTaxonomy(string $taxonomy): static
     {
         $this->taxonomy = $taxonomy;
+
+        return $this;
+    }
+
+    public function getParent(): ?int
+    {
+        return $this->parent;
+    }
+
+    public function setParent(?int $parent): static
+    {
+        $this->parent = $parent;
+
+        return $this;
+    }
+
+    public function getCatUnique(): ?string
+    {
+        return $this->cat_unique;
+    }
+
+    public function setCatUnique(?string $cat_unique): static
+    {
+        $this->cat_unique = $cat_unique;
 
         return $this;
     }

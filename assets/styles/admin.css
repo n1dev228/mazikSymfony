@@ -7,6 +7,7 @@
     left: 0;
 }
 .admin-main {
+    border-radius: 4px;
     margin-top: 20px;
     margin-left: 220px;
     padding: 16px;
@@ -20,6 +21,77 @@
 }
 .admin-form {
     display: flex;
+    gap: 20px;
+}
+.admin-form-body {
+    display: flex;
     flex-direction: column;
     gap: 10px;
+    flex-basis: 960px;
+    flex-grow: 1;
+}
+.admin-body-sidebar {
+    flex-basis: 240px;
+    background: #e1e1e1;
+    padding: 20px;
+}
+.admin-button {
+    background: #00b2c9;
+    color: #fff;
+    font-weight: 900;
+    letter-spacing: 1.36px;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.admin-sidebar-section {
+    padding: 20px 0;
+
+}
+#adminContentTextarea {
+    min-height: 450px;
+}
+.admin-image-main {
+    border: 1px dotted #575757;
+    padding: 20px;
+}
+.ql-picker-label {
+     font-size: 0;
+}
+.ql-picker-label:before {
+    content: 'Headings';
+    font-size: 16px;
+    color: #222;
+    display: block !important;
+}
+.ql-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.ql-formats {
+    display: flex !important;
+    gap: 16px;
+}
+.ql-snow.ql-toolbar button, .ql-snow .ql-toolbar button {
+    width: 100px;
+}
+.ql-editor p {
+    margin-bottom: 16px;
+    font-weight: 400;
+    color: #575757;
+    font-size: 16px;
+    line-height: 22px;
+}
+.ql-editor h1, .ql-editor h2, .ql-editor h3 {
+    color: #000;
+    margin-bottom: 16px;
+}
+.admin-form-body-category {
+    width: 360px;
+    flex-basis: 400px;
+}
+.admin-categories-list {
+    flex-basis: 940px;
 }

@@ -1,0 +1,18 @@
+{% extends 'admin/base-admin.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+    <h1 class="admin-page-heading">Импорт товаров</h1>
+
+    <form action="" method="post">
+        <input type="hidden" name="importProducts" value="true">
+        <button class="mz-btn">Начать импорт</button>
+    </form>
+    {% for product in products %}
+        <pre>
+            {{ dump(product) }}
+        </pre>
+    {% endfor %}
+
+{% endblock %}

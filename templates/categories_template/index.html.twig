@@ -1,0 +1,7 @@
+{% if categories is not empty %}
+    <div class="mz-row mz-category-row">
+        {% for cat in categories %}
+            <a href="/product-category/{{ cat.slug }}" class="mz-cat">{{ cat.name }}</a>
+        {% endfor %}
+    </div>
+{% endif %}

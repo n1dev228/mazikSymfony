@@ -5,14 +5,9 @@
 /config/secrets/prod/prod.decrypt.private.php
 /public/bundles/
 /public/uploads/20*
+/public/images/*
+/public/json/
 /var/
 /vendor/
 /.env
 ###< symfony/framework-bundle ###
-
-###> symfony/webpack-encore-bundle ###
-/node_modules/
-/public/build/
-npm-debug.log
-yarn-error.log
-###< symfony/webpack-encore-bundle ###
